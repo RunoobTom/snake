@@ -4,6 +4,7 @@ import {HashRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import Login from './page/login';
 import store from './model/store';
 import Test from './page/test';
+import Five from './page/login/five';
 
 class Routers extends React.Component {
     render() {
@@ -13,6 +14,7 @@ class Routers extends React.Component {
                     <Switch>
                         <Route path='/' exact component={Login}  />
                         <Route path='/test' component={Test}/>
+                        <Route path='/five' component={Five} />
                     </Switch>
                 </Router>
             </Provider>

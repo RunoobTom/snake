@@ -1,28 +1,38 @@
 import React from 'react';
+import './index.scss';
 
 class Test extends React.Component {
     constructor(props){
         super(props);
-        let newObj;
+        
     }
     
-    toSnake = obj => {
-        for(let key in obj) {
-            if(typeof(obj[key]) === 'object') {
-                console.log(key);
-                this.toSnake(obj[key]);
-            } else {
-                console.log(key)
-            }
-        }
-    };
-    
     render() {
-        return(
+        return (
             <div>
-                <button onClick={()=>{this.toSnake({a:[1,2,3,4],b:{c:'qwe',d:'ewq',f:{t:'te'}}})}}>切换</button>
+                <div className='grail'>
+                    <div className="header"/>
+                    <div className="content">
+                        <div className="middle"/>
+                        <div className="left"/>
+                        <div className="right"/>
+                    </div>
+                    <div className="footer"/>
+                </div>
+                
+                <div className='wing'>
+                    <div className="header"/>
+                    <div className="content">
+                        <div className="middle">
+                            <div className="inner-middle"/>
+                        </div>
+                        <div className="left"/>
+                        <div className="right"/>
+                    </div>
+                    <div className="footer"/>
+                </div>
             </div>
-        )
+        );
     }
 }
 

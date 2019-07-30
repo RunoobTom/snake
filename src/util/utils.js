@@ -33,3 +33,28 @@ export const randomArray = (array, length, max, min) => {
         randomArray(newArray, length, max, min);
     }
 };
+
+
+// 去除字符串中指定字符的最后一个
+/*
+    lastIndexOf获取index更加简单一点
+    获取到index之后可以用slice来处理字符串
+    
+ */
+export const removeLastChar = (str, char) => {
+    let key = 0;
+    str.split('').forEach((item, index) => {
+        if(item === char) {
+            key = index;
+        }
+    });
+    return str.split('').filter((_, index) => index!==key).join('');
+};
+
+/*
+    把大小写字符切换
+    正则的test方法，或者使用A和Z的键值
+ */
+export const toggleUpLowCase = str => {
+    return str.split('').map(item => /[A-Z]/.test(item) ? item.toLowerCase() : item.toUpperCase()).join('');
+};
