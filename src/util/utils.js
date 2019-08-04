@@ -58,3 +58,18 @@ export const removeLastChar = (str, char) => {
 export const toggleUpLowCase = str => {
     return str.split('').map(item => /[A-Z]/.test(item) ? item.toLowerCase() : item.toUpperCase()).join('');
 };
+
+/* 
+    把js数组转换为XML文件字符串 
+*/
+export const toXML = arr => {
+    let str  = '<resources>\n';
+    arr.forEach(item => {
+        const content = item.content.replace('&', '&amp;')
+        str += `<string name="${item.key}">${content}</string>\n`;
+    })
+    str += '</resources>';
+    console.log(str)
+}
+
+
